@@ -24,9 +24,12 @@ namespace Bridge
             set
             {
                 if (value.Length > 7)
-                    throw new ArgumentException("Nummerpladen må ikke være længere end 7 tegn.");
+                    throw new ArgumentException("License plate cannot be longer than 7 characters.");
                 _LicensPlate = value; // Rettelse: Korrekt tildeling af værdi
             }
+
+
+
         }
 
         /// <summary>
@@ -59,7 +62,7 @@ namespace Bridge
         /// Hvis køretøjet har en BroBizz, gives der 10% rabat.
         /// </summary>
         /// <returns>Den endelige pris efter eventuel rabat.</returns>
-        public  double GetPrice()
+        public double GetPrice()
         {
             double price = Price();
             if (HasBroBizz)
@@ -68,5 +71,7 @@ namespace Bridge
             }
             return price;
         }
+    }
+    public string navn { get; set; }
     }
 }
